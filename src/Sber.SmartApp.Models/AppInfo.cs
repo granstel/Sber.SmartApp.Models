@@ -1,9 +1,18 @@
-﻿namespace Sber.SmartApp.Models
+﻿using System;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+
+namespace Sber.SmartApp.Models
 {
+    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class AppInfo
     {
-        public string ProjectId { get; set; }
-        public string ApplicationId { get; set; }
-        public string AppversionId { get; set; }
+        public Guid ProjectId { get; set; }
+
+        public Guid? ApplicationId { get; set; }
+
+        public Guid? AppversionId { get; set; }
+
+        public string FrontendType { get; set; }
     }
 }
