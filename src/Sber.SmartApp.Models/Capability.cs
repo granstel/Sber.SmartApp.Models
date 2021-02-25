@@ -4,12 +4,8 @@ using Newtonsoft.Json.Serialization;
 namespace Sber.SmartApp.Models
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class Uuid
+    public class Capability
     {
-        public string UserChannel { get; set; }
-
-        public string Sub { get; set; }
-
-        public string UserId { get; set; }
+        public bool Available { get; set; }
     }
 }
