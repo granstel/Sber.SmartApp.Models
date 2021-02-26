@@ -4,8 +4,10 @@ using Newtonsoft.Json.Serialization;
 namespace Sber.SmartApp.Models
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class Request : ContractBase
+    public class Item
     {
+        public Card Card { get; set; }
 
+        public Bubble Bubble { get; set; }
     }
 }

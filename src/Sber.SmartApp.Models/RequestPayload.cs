@@ -4,7 +4,7 @@ using Newtonsoft.Json.Serialization;
 namespace Sber.SmartApp.Models
 {
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Payload
+    public class RequestPayload
     {
         public AppInfo AppInfo { get; set; }
 
