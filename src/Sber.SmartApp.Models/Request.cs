@@ -6,6 +6,6 @@ namespace Sber.SmartApp.Models
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Request : ContractBase
     {
-
+        public RequestPayload Payload { get; set; }
     }
 }

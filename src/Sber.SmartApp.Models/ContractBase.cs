@@ -9,7 +9,5 @@
         public long MessageId { get; set; }
 
         public Uuid Uuid { get; set; }
-
-        public RequestPayload Payload { get; set; }
     }
 }
