@@ -14,6 +14,12 @@ namespace Sber.SmartApp.Models
 
         public string SurfaceVersion { get; set; }
 
+        public string DeviceId { get; set; }
+
+        public string DeviceManufacturer { get; set; }
+
+        public string DeviceModel { get; set; }
+
         public Features Features { get; set; }
 
         public Capabilities Capabilities { get; set; }

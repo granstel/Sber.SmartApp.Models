@@ -8,7 +8,7 @@ namespace Sber.SmartApp.Models
     {
         public bool HappyBirthday { get; set; }
 
-        public long LastCall { get; set; }
+        public long? LastCall { get; set; }
         
         public bool IsAlice { get; set; }
     }
