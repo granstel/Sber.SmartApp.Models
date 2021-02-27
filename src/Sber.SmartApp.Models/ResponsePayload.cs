@@ -14,6 +14,8 @@ namespace Sber.SmartApp.Models
 
         public Item[] Items { get; set; }
 
+        public Suggestion Suggestions { get; set; }
+
         [JsonProperty(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
         public bool AutoListening { get; set; }
         
