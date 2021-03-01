@@ -4,9 +4,9 @@ using Newtonsoft.Json.Serialization;
 namespace Sber.SmartApp.Models
 {
     [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
-    public class Item
+    public class PayloadItem
     {
-        public Item()
+        public PayloadItem()
         {
             Card = new Card();
             Bubble = new Bubble();

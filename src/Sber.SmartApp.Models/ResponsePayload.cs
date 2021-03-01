@@ -12,7 +12,7 @@ namespace Sber.SmartApp.Models
 
         public Emotion Emotion { get; set; }
 
-        public Item[] Items { get; set; }
+        public PayloadItem[] Items { get; set; }
 
         public Suggestion Suggestions { get; set; }
 

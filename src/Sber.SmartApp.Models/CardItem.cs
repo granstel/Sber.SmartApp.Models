@@ -4,14 +4,16 @@ using Newtonsoft.Json.Serialization;
 namespace Sber.SmartApp.Models
 {
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Card
+    public class CardItem
     {
         public string Type { get; set; }
 
-        public CardItem[] Items { get; set; }
+        public CardItemText TopText { get; set; }
 
-        public int Columns { get; set; }
+        public CardItemText BottomText { get; set; }
 
-        public string ItemWidth { get; set; }
+        public Paddings Paddings { get; set; }
+
+        public Action[] Actions { get; set; }
     }
 }
