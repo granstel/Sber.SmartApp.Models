@@ -14,7 +14,7 @@ namespace Sber.SmartApp.Models
 
         public string TextColor { get; set; }
 
-        public int MaxLines { get; set; }
+        public int? MaxLines { get; set; }
 
         public Margins Margins { get; set; }
     }
