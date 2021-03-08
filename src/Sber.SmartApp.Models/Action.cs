@@ -1,15 +1,16 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Action
     {
+        [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
 
+        [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
+        [JsonProperty(PropertyName = "deep_link")]
         public string DeepLink { get; set; }
     }
 }
