@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
@@ -7,6 +8,9 @@ namespace Sber.SmartApp.Models
         [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Recommend to get values from <see cref="ActionTypes"/>
+        /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
