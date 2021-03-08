@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Annotation
     {
+        [JsonProperty(PropertyName = "classes")]
         public string[] Classes { get; set; }
 
+        [JsonProperty(PropertyName = "probas")]
         public float[] Probas { get; set; }
     }
 }
