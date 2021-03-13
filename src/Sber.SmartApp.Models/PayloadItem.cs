@@ -12,8 +12,8 @@ namespace Sber.SmartApp.Models
             Bubble = new Bubble();
         }
 
-        public Card Card { get; set; }
-
         public Bubble Bubble { get; set; }
+
+        public Card Card { get; set; }
     }
 }
