@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>GranSteL</Authors>
+    <Description>Models for Sber SmartApp API</Description>
+    <Version>0.0.1</Version>
+    <PackageProjectUrl>https://developer.sberdevices.ru/docs/ru/developer_tools/amp/smartappapi_description_and_guide</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/granstel/Sber.SmartApp.Models</RepositoryUrl>
+    <RepositoryType>Github</RepositoryType>
+    <PackageTags>Sber, SmartApp, Models</PackageTags>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Language>C#</Language>
+    <Title>Sber.SmartApp.Models</Title>
+    <PackageReleaseNotes>Minimum required models, work in progress</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
