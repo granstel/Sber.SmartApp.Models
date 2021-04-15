@@ -1,10 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sber.SmartApp.Models.Constants
 
 namespace Sber.SmartApp.Models
 {
     public class CardItem
     {
+        /// <summary>
+        /// Recommend to get values from <see cref="ItemsTypeValues"/>
+        /// </summary>
 	[JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 

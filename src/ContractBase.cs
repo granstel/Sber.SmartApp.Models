@@ -1,10 +1,14 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sber.SmartApp.Models.Constants
 
 namespace Sber.SmartApp.Models
 {
     public abstract class ContractBase
     {
+        /// <summary>
+        /// Recommend to get values from <see cref="MessageNameValues"/>
+        /// </summary>
 	[JsonProperty(PropertyName = "messageName")]
         public string MessageName { get; set; }
 

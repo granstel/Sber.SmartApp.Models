@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sber.SmartApp.Models.Constants
 
 namespace Sber.SmartApp.Models
 {
@@ -8,6 +9,10 @@ namespace Sber.SmartApp.Models
 	[JsonProperty(PropertyName = "pronounceText")]
         public string PronounceText { get; set; }
 
+
+        /// <summary>
+        /// Recommend to get values from <see cref="PronounceTextTypes"/>
+        /// </summary>
 	[JsonProperty(PropertyName = "pronounceTextType")]
         public string PronounceTextType { get; set; }
 
