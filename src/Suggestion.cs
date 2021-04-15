@@ -3,10 +3,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-
     public class Suggestion
     {
+	[JsonProperty(PropertyName = "buttons")]
         public Button[] Buttons { get; set; }
     }
 }

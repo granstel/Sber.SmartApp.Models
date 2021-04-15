@@ -3,7 +3,6 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class PayloadItem
     {
         public PayloadItem()
@@ -12,8 +11,10 @@ namespace Sber.SmartApp.Models
             Bubble = new Bubble();
         }
 
+	[JsonProperty(PropertyName = "bubble")]
         public Bubble Bubble { get; set; }
 
+	[JsonProperty(PropertyName = "card")]
         public Card Card { get; set; }
     }
 }

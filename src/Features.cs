@@ -3,9 +3,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Features
     {
+	[JsonProperty(PropertyName = "appTypes")]
         public string[] AppTypes { get; set; }
     }
 }

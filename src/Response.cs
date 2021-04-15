@@ -3,9 +3,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Response : ContractBase
     {
+	[JsonProperty(PropertyName = "payload")]
         public ResponsePayload Payload { get; set; }
     }
 }

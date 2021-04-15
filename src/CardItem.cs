@@ -3,17 +3,21 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class CardItem
     {
+	[JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
+	[JsonProperty(PropertyName = "top_text")]
         public CardItemText TopText { get; set; }
 
+	[JsonProperty(PropertyName = "bottom_text")]
         public CardItemText BottomText { get; set; }
 
+	[JsonProperty(PropertyName = "paddings")]
         public Paddings Paddings { get; set; }
 
+	[JsonProperty(PropertyName = "actions")]
         public Action[] Actions { get; set; }
     }
 }
