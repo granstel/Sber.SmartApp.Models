@@ -1,6 +1,9 @@
 ﻿namespace Sber.SmartApp.Models.Constants
 {
-    public static class MarginsValues
+    /// <summary>
+    /// Отступы
+    /// </summary>
+    public static class IndentValues
     {
         /// <summary>
         /// Default value
