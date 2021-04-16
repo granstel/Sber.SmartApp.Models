@@ -10,7 +10,7 @@
     <PackageProjectUrl>https://developer.sberdevices.ru/docs/ru/developer_tools/amp/smartappapi_description_and_guide</PackageProjectUrl>
     <RepositoryUrl>https://github.com/granstel/Sber.SmartApp.Models</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
-    <PackageTags>Sber, SmartApp, Models</PackageTags>
+    <PackageTags>Sber, SmartApp, Models, voice-assistant, salute</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Language>C#</Language>
     <Title>Sber.SmartApp.Models</Title>
