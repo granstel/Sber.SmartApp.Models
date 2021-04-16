@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using Sber.SmartApp.Models.Constants
 
 namespace Sber.SmartApp.Models
 {
@@ -11,9 +12,16 @@ namespace Sber.SmartApp.Models
 	[JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
 
+        /// <summary>
+        /// Recommend to get values from <see cref="TypefaceValues"/>
+        /// </summary>
 	[JsonProperty(PropertyName = "typeface")]
         public string Typeface { get; set; }
 
+
+        /// <summary>
+        /// Recommend to get values from <see cref="TextColorValues"/>
+        /// </summary>
 	[JsonProperty(PropertyName = "text_color")]
         public string TextColor { get; set; }
 
