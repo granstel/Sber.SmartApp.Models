@@ -12,7 +12,7 @@ namespace Sber.SmartApp.Models
         public string Type { get; set; }
 
         [JsonProperty(PropertyName = "items")]
-        public CardItem[] Items { get; set; }
+        public CardCell[] Items { get; set; }
 
         [JsonProperty(PropertyName = "columns")]
         public int Columns { get; set; }

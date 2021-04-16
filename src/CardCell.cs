@@ -3,19 +3,19 @@ using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
-    public class CardItem
+    public class CardCell
     {
         /// <summary>
-        /// Recommend to get values from <see cref="ItemsTypeValues"/>
+        /// Recommend to get values from <see cref="CellTypeValues"/>
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
         [JsonProperty(PropertyName = "top_text")]
-        public CardItemText TopText { get; set; }
+        public CardCellText TopText { get; set; }
 
         [JsonProperty(PropertyName = "bottom_text")]
-        public CardItemText BottomText { get; set; }
+        public CardCellText BottomText { get; set; }
 
         [JsonProperty(PropertyName = "paddings")]
         public Paddings Paddings { get; set; }

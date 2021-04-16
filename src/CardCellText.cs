@@ -3,8 +3,11 @@ using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
-    public class CardItemText
+    public class CardCellText
     {
+        /// <summary>
+        /// Recommend to get values from <see cref="CellTypeValues"/>
+        /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
