@@ -1,6 +1,6 @@
 ﻿namespace Sber.SmartApp.Models.Constants
 {
-    public static class ExpandPolicies
+    public static class ExpandPolicyValues
     {
         /// <summary>
         /// Default value

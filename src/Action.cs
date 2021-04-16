@@ -9,7 +9,7 @@ namespace Sber.SmartApp.Models
         public string Text { get; set; }
 
         /// <summary>
-        /// Recommend to get values from <see cref="ActionTypes"/>
+        /// Recommend to get values from <see cref="ActionTypeValues"/>
         /// </summary>
         [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }

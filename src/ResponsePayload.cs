@@ -9,7 +9,7 @@ namespace Sber.SmartApp.Models
         public string PronounceText { get; set; }
 
         /// <summary>
-        /// Recommend to get values from <see cref="PronounceTextTypes"/>
+        /// Recommend to get values from <see cref="PronounceTextTypeValues"/>
         /// </summary>
         [JsonProperty(PropertyName = "pronounceTextType")]
         public string PronounceTextType { get; set; }

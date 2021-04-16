@@ -12,7 +12,7 @@ namespace Sber.SmartApp.Models
         public bool Markdown { get; set; }
 
         /// <summary>
-        /// Recommend to get values from <see cref="ExpandPolicies"/>
+        /// Recommend to get values from <see cref="ExpandPolicyValues"/>
         /// </summary>
         [JsonProperty(PropertyName = "expand_policy")]
         public string ExpandPolicy { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Sber.SmartApp.Models.Constants
 {
-    public static class PronounceTextTypes
+    public static class PronounceTextTypeValues
     {
         public const string Text = "application/text";
 
