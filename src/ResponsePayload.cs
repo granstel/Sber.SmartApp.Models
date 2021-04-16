@@ -26,7 +26,7 @@ namespace Sber.SmartApp.Models
         [JsonProperty(PropertyName = "auto_listening")]
         public bool AutoListening { get; set; }
 
-        [JsonProperty(PropertyName = "finished")]        
+        [JsonProperty(PropertyName = "finished")]
         public bool Finished { get; set; }
 
         [JsonProperty(PropertyName = "intent")]
