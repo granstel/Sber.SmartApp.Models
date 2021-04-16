@@ -1,15 +1,16 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
     public class Uuid
     {
+        [JsonProperty(PropertyName = "userChannel")]
         public string UserChannel { get; set; }
 
+        [JsonProperty(PropertyName = "sub")]
         public string Sub { get; set; }
 
+        [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }
     }
 }

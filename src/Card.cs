@@ -1,17 +1,26 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Card
     {
+        /// <summary>
+        /// Recommend to get values from <see cref="CardTypeValues"/>
+        /// </summary>
+        [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
-        public CardItem[] Items { get; set; }
+        [JsonProperty(PropertyName = "items")]
+        public CardCell[] Items { get; set; }
 
+        [JsonProperty(PropertyName = "columns")]
         public int Columns { get; set; }
 
+        /// <summary>
+        /// Recommend to get values from <see cref="ItemWidthValues"/>
+        /// </summary>
+        [JsonProperty(PropertyName = "item_width")]
         public string ItemWidth { get; set; }
     }
 }

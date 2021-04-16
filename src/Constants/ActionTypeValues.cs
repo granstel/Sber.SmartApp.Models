@@ -1,6 +1,6 @@
 ﻿namespace Sber.SmartApp.Models.Constants
 {
-    public static class ActionTypes
+    public static class ActionTypeValues
     {
         public const string Text = "text";
 
