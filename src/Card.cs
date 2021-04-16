@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Sber.SmartApp.Models.Constants
+using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
@@ -9,19 +8,19 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="CardTypeValues"/>
         /// </summary>
-	[JsonProperty(PropertyName = "type")]
+        [JsonProperty(PropertyName = "type")]
         public string Type { get; set; }
 
-	[JsonProperty(PropertyName = "items")]
+        [JsonProperty(PropertyName = "items")]
         public CardItem[] Items { get; set; }
 
-	[JsonProperty(PropertyName = "columns")]
+        [JsonProperty(PropertyName = "columns")]
         public int Columns { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="ItemWidthValues"/>
         /// </summary>
-	[JsonProperty(PropertyName = "item_width")]
+        [JsonProperty(PropertyName = "item_width")]
         public string ItemWidth { get; set; }
     }
 }

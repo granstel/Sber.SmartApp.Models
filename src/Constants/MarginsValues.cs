@@ -5,26 +5,26 @@
         /// <summary>
         /// Default value
         /// </summary>
-        public const string x0 = "0x";
+        public const string X0 = "0x";
 
-        public const string x1 = "1x";
+        public const string X1 = "1x";
 
-        public const string x2 = "2x";
+        public const string X2 = "2x";
 
-        public const string x4 = "4x";
+        public const string X4 = "4x";
 
-        public const string x5 = "5x";
+        public const string X5 = "5x";
 
-        public const string x6 = "6x";
+        public const string X6 = "6x";
 
-        public const string x8 = "8x";
+        public const string X8 = "8x";
 
-        public const string x9 = "9x";
+        public const string X9 = "9x";
 
-        public const string x10 = "10x";
+        public const string X10 = "10x";
 
-        public const string x12 = "12x";
+        public const string X12 = "12x";
 
-        public const string x16 = "16x";
+        public const string X16 = "16x";
     }
 }

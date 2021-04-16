@@ -5,7 +5,8 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>GranSteL</Authors>
     <Description>Models for Sber SmartApp API</Description>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
+    <PackageReleaseNotes>Minimum required models, constant values</PackageReleaseNotes>
     <PackageProjectUrl>https://developer.sberdevices.ru/docs/ru/developer_tools/amp/smartappapi_description_and_guide</PackageProjectUrl>
     <RepositoryUrl>https://github.com/granstel/Sber.SmartApp.Models</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
@@ -13,7 +14,6 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Language>C#</Language>
     <Title>Sber.SmartApp.Models</Title>
-    <PackageReleaseNotes>Minimum required models, work in progress</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

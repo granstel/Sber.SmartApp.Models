@@ -5,20 +5,20 @@
         /// <summary>
         /// Default value
         /// </summary>
-        public const string default = "default";
+        public const string Default = "default";
 
-        public const string secondary = "secondary";
+        public const string Secondary = "secondary";
 
-        public const string tertiary = "tertiary";
+        public const string Tertiary = "tertiary";
 
-        public const string inverse = "inverse";
+        public const string Inverse = "inverse";
 
-        public const string brand = "brand";
+        public const string Brand = "brand";
 
-        public const string warning = "warning";
+        public const string Warning = "warning";
 
-        public const string critical = "critical";
+        public const string Critical = "critical";
 
-        public const string link = "link";
+        public const string Link = "link";
     }
 }

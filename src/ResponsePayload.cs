@@ -1,43 +1,41 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Sber.SmartApp.Models.Constants
+using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
     public class ResponsePayload
     {
-	[JsonProperty(PropertyName = "pronounceText")]
+        [JsonProperty(PropertyName = "pronounceText")]
         public string PronounceText { get; set; }
-
 
         /// <summary>
         /// Recommend to get values from <see cref="PronounceTextTypes"/>
         /// </summary>
-	[JsonProperty(PropertyName = "pronounceTextType")]
+        [JsonProperty(PropertyName = "pronounceTextType")]
         public string PronounceTextType { get; set; }
 
-	[JsonProperty(PropertyName = "emotion")]
+        [JsonProperty(PropertyName = "emotion")]
         public Emotion Emotion { get; set; }
 
-	[JsonProperty(PropertyName = "items")]
+        [JsonProperty(PropertyName = "items")]
         public PayloadItem[] Items { get; set; }
 
-	[JsonProperty(PropertyName = "suggestions")]
+        [JsonProperty(PropertyName = "suggestions")]
         public Suggestion Suggestions { get; set; }
 
-	[JsonProperty(PropertyName = "auto_listening")]
+        [JsonProperty(PropertyName = "auto_listening")]
         public bool AutoListening { get; set; }
 
-	[JsonProperty(PropertyName = "finished")]        
+        [JsonProperty(PropertyName = "finished")]        
         public bool Finished { get; set; }
 
-	[JsonProperty(PropertyName = "intent")]
+        [JsonProperty(PropertyName = "intent")]
         public string Intent { get; set; }
 
-	[JsonProperty(PropertyName = "projectName")]
+        [JsonProperty(PropertyName = "projectName")]
         public string ProjectName { get; set; }
 
-	[JsonProperty(PropertyName = "device")]
+        [JsonProperty(PropertyName = "device")]
         public Device Device { get; set; }
     }
 }

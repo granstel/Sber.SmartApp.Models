@@ -7,7 +7,7 @@ namespace Sber.SmartApp.Models
     {
         [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
-        
+
         [JsonProperty(PropertyName = "markdown")]
         public bool Markdown { get; set; }
 

@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using Sber.SmartApp.Models.Constants
+using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
@@ -9,16 +8,16 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="MessageNameValues"/>
         /// </summary>
-	[JsonProperty(PropertyName = "messageName")]
+        [JsonProperty(PropertyName = "messageName")]
         public string MessageName { get; set; }
 
-	[JsonProperty(PropertyName = "sessionId")]
+        [JsonProperty(PropertyName = "sessionId")]
         public string SessionId { get; set; }
 
-	[JsonProperty(PropertyName = "messageId")]
+        [JsonProperty(PropertyName = "messageId")]
         public long MessageId { get; set; }
 
-	[JsonProperty(PropertyName = "uuid")]
+        [JsonProperty(PropertyName = "uuid")]
         public Uuid Uuid { get; set; }
     }
 }

@@ -1,17 +1,16 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Uuid
     {
-	[JsonProperty(PropertyName = "userChannel")]
+        [JsonProperty(PropertyName = "userChannel")]
         public string UserChannel { get; set; }
 
-	[JsonProperty(PropertyName = "sub")]
+        [JsonProperty(PropertyName = "sub")]
         public string Sub { get; set; }
 
-	[JsonProperty(PropertyName = "userId")]
+        [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }
     }
 }
