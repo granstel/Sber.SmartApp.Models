@@ -3,9 +3,9 @@ using Newtonsoft.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Meta
     {
+	[JsonProperty(PropertyName = "time")]
         public Time Time { get; set; }
     }
 }
