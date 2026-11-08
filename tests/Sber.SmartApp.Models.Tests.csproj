@@ -16,12 +16,8 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(ModelsPackageVersion)' == ''">
+  <ItemGroup>
     <ProjectReference Include="..\src\Sber.SmartApp.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(ModelsPackageVersion)' != ''">
-    <PackageReference Include="Sber.SmartApp.Models" Version="$(ModelsPackageVersion)" />
   </ItemGroup>
 
 </Project>
