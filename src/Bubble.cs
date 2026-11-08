@@ -1,20 +1,20 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
     public class Bubble
     {
-        [JsonProperty(PropertyName = "text")]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
 
-        [JsonProperty(PropertyName = "markdown")]
+        [JsonPropertyName("markdown")]
         public bool Markdown { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="ExpandPolicyValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "expand_policy")]
+        [JsonPropertyName("expand_policy")]
         public string ExpandPolicy { get; set; }
     }
 }

@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Capabilities
     {
-        [JsonProperty(PropertyName = "screen")]
+        [JsonPropertyName("screen")]
         public Capability Screen { get; set; }
 
-        [JsonProperty(PropertyName = "mic")]
+        [JsonPropertyName("mic")]
         public Capability Mic { get; set; }
 
-        [JsonProperty(PropertyName = "speak")]
+        [JsonPropertyName("speak")]
         public Capability Speak { get; set; }
     }
 }

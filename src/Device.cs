@@ -1,34 +1,34 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Device
     {
-        [JsonProperty(PropertyName = "platformType")]
+        [JsonPropertyName("platformType")]
         public string PlatformType { get; set; }
 
-        [JsonProperty(PropertyName = "platformVersion")]
+        [JsonPropertyName("platformVersion")]
         public string PlatformVersion { get; set; }
 
-        [JsonProperty(PropertyName = "surface")]
+        [JsonPropertyName("surface")]
         public string Surface { get; set; }
 
-        [JsonProperty(PropertyName = "surfaceVersion")]
+        [JsonPropertyName("surfaceVersion")]
         public string SurfaceVersion { get; set; }
 
-        [JsonProperty(PropertyName = "deviceId")]
+        [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
 
-        [JsonProperty(PropertyName = "deviceManufacturer")]
+        [JsonPropertyName("deviceManufacturer")]
         public string DeviceManufacturer { get; set; }
 
-        [JsonProperty(PropertyName = "deviceModel")]
+        [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
 
-        [JsonProperty(PropertyName = "features")]
+        [JsonPropertyName("features")]
         public Features Features { get; set; }
 
-        [JsonProperty(PropertyName = "capabilities")]
+        [JsonPropertyName("capabilities")]
         public Capabilities Capabilities { get; set; }
     }
 }

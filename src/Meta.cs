@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Meta
     {
-        [JsonProperty(PropertyName = "time")]
+        [JsonPropertyName("time")]
         public Time Time { get; set; }
     }
 }

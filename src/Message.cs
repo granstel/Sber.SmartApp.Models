@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Message
     {
-        [JsonProperty(PropertyName = "original_text")]
+        [JsonPropertyName("original_text")]
         public string OriginalText { get; set; }
 
-        [JsonProperty(PropertyName = "normalized_text")]
+        [JsonPropertyName("normalized_text")]
         public string NormalizedText { get; set; }
 
-        [JsonProperty(PropertyName = "asr_normalized_message")]
+        [JsonPropertyName("asr_normalized_message")]
         public string AsrNormalizedMessage { get; set; }
     }
 }

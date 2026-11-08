@@ -1,16 +1,18 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Time
     {
-        [JsonProperty(PropertyName = "timezone_id")]
+        [JsonPropertyName("timezone_id")]
         public string TimezoneId { get; set; }
 
-        [JsonProperty(PropertyName = "timezone_offset_sec")]
+        [JsonPropertyName("timezone_offset_sec")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public int TimezoneOffsetSec { get; set; }
 
-        [JsonProperty(PropertyName = "timestamp")]
+        [JsonPropertyName("timestamp")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public long Timestamp { get; set; }
     }
 }

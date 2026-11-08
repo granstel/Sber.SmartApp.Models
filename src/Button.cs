@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Button
     {
-        [JsonProperty(PropertyName = "title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [JsonProperty(PropertyName = "action")]
+        [JsonPropertyName("action")]
         public Action Action { get; set; }
 
-        [JsonProperty(PropertyName = "actions")]
+        [JsonPropertyName("actions")]
         public Action[] Actions { get; set; }
     }
 }

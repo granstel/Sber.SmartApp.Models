@@ -1,13 +1,14 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Annotation
     {
-        [JsonProperty(PropertyName = "classes")]
+        [JsonPropertyName("classes")]
         public string[] Classes { get; set; }
 
-        [JsonProperty(PropertyName = "probas")]
+        [JsonPropertyName("probas")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public float[] Probas { get; set; }
     }
 }

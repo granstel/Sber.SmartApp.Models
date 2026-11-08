@@ -5,19 +5,20 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>GranSteL</Authors>
     <Description>Models for Sber SmartApp API</Description>
-    <Version>1.0.0</Version>
-    <PackageReleaseNotes>Minimum required models, constant values</PackageReleaseNotes>
+    <Version>2.0.0</Version>
+    <PackageReleaseNotes>Use System.Text.Json for the SmartApp JSON contracts.</PackageReleaseNotes>
     <PackageProjectUrl>https://developer.sberdevices.ru/docs/ru/developer_tools/amp/smartappapi_description_and_guide</PackageProjectUrl>
     <RepositoryUrl>https://github.com/granstel/Sber.SmartApp.Models</RepositoryUrl>
     <RepositoryType>Github</RepositoryType>
     <PackageTags>Sber, SmartApp, Models, voice-assistant, salute</PackageTags>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Language>C#</Language>
     <Title>Sber.SmartApp.Models</Title>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Text.Json" Version="10.0.14" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,7 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\README.md" Pack="True" PackagePath="" />
   </ItemGroup>
 
 </Project>

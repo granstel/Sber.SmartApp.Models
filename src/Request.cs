@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Request : ContractBase
     {
-        [JsonProperty(PropertyName = "payload")]
+        [JsonPropertyName("payload")]
         public RequestPayload Payload { get; set; }
     }
 }

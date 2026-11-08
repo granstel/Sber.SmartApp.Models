@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Features
     {
-        [JsonProperty(PropertyName = "appTypes")]
+        [JsonPropertyName("appTypes")]
         public string[] AppTypes { get; set; }
     }
 }

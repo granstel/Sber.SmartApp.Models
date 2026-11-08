@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
@@ -8,28 +8,29 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="CellTypeValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty(PropertyName = "text")]
+        [JsonPropertyName("text")]
         public string Text { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="TypefaceValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "typeface")]
+        [JsonPropertyName("typeface")]
         public string Typeface { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="TextColorValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "text_color")]
+        [JsonPropertyName("text_color")]
         public string TextColor { get; set; }
 
-        [JsonProperty(PropertyName = "max_lines")]
+        [JsonPropertyName("max_lines")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public int? MaxLines { get; set; }
 
-        [JsonProperty(PropertyName = "margins")]
+        [JsonPropertyName("margins")]
         public Margins Margins { get; set; }
     }
 }

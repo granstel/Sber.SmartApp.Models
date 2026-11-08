@@ -1,18 +1,17 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Strategies
     {
-        [JsonProperty(PropertyName = "happy_birthday")]
+        [JsonPropertyName("happy_birthday")]
         public bool HappyBirthday { get; set; }
 
-        [JsonProperty(PropertyName = "last_call")]
+        [JsonPropertyName("last_call")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public long? LastCall { get; set; }
 
-        [JsonProperty(PropertyName = "is_alice")]
+        [JsonPropertyName("is_alice")]
         public bool IsAlice { get; set; }
     }
 }
