@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+      - name: Pack and test the package on .NET 10
+        run: |
+          project=src/Sber.SmartApp.Models.csproj
+          tests=tests/Sber.SmartApp.Models.Tests.csproj
+          feed="$RUNNER_TEMP/packages"
+          version="0.0.0-ci.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
+          dotnet pack "$project" -c Release -p:GeneratePackageOnBuild=false -p:PackageVersion="$version" -o "$feed"
+          dotnet restore "$tests" -p:ModelsPackageVersion="$version" --source "$feed" --source https://api.nuget.org/v3/index.json
+          dotnet test "$tests" -c Release --no-restore -p:ModelsPackageVersion="$version"
