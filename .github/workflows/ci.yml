@@ -32,12 +32,9 @@ jobs:
         id: version
         run: |
           if [[ "$GITHUB_EVENT_NAME" == release ]]; then
-            version="${GITHUB_REF_NAME#v}"
-            number='(0|[1-9][0-9]*)'
-            identifier="($number|[0-9]*[A-Za-z-][0-9A-Za-z-]*)"
-            semver="^${number}\.${number}\.${number}(-${identifier}(\.${identifier})*)?$"
-            if [[ ! "$version" =~ $semver ]]; then
-              echo "::error::Use a SemVer release tag without build metadata (optional v prefix)."
+            version="$GITHUB_REF_NAME"
+            if [[ ! "$version" =~ ^(0|[1-9][0-9]*)[.](0|[1-9][0-9]*)[.](0|[1-9][0-9]*)$ ]]; then
+              echo '::error::Release tag must be MAJOR.MINOR.PATCH (for example, 2.1.0).'
               exit 1
             fi
           else
