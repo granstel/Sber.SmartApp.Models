@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
@@ -8,25 +8,25 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="IndentValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "top")]
+        [JsonPropertyName("top")]
         public string Top { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="IndentValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "left")]
+        [JsonPropertyName("left")]
         public string Left { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="IndentValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "right")]
+        [JsonPropertyName("right")]
         public string Right { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="IndentValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "bottom")]
+        [JsonPropertyName("bottom")]
         public string Bottom { get; set; }
     }
 }

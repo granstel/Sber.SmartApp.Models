@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
@@ -8,7 +8,7 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="EmotionIdValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "emotionId")]
+        [JsonPropertyName("emotionId")]
         public string EmotionId { get; set; }
     }
 }

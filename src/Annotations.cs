@@ -1,16 +1,16 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Annotations
     {
-        [JsonProperty(PropertyName = "censor_data")]
+        [JsonPropertyName("censor_data")]
         public Annotation CensorData { get; set; }
 
-        [JsonProperty(PropertyName = "text_sentiment")]
+        [JsonPropertyName("text_sentiment")]
         public Annotation TextSentiment { get; set; }
 
-        [JsonProperty(PropertyName = "asr_sentiment")]
+        [JsonPropertyName("asr_sentiment")]
         public Annotation AsrSentiment { get; set; }
     }
 }

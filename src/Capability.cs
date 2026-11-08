@@ -1,10 +1,10 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Capability
     {
-        [JsonProperty(PropertyName = "available")]
+        [JsonPropertyName("available")]
         public bool Available { get; set; }
     }
 }

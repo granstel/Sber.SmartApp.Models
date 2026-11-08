@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
@@ -8,19 +8,20 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="CardTypeValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty(PropertyName = "items")]
+        [JsonPropertyName("items")]
         public CardCell[] Items { get; set; }
 
-        [JsonProperty(PropertyName = "columns")]
+        [JsonPropertyName("columns")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public int Columns { get; set; }
 
         /// <summary>
         /// Recommend to get values from <see cref="ItemWidthValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "item_width")]
+        [JsonPropertyName("item_width")]
         public string ItemWidth { get; set; }
     }
 }

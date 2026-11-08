@@ -1,19 +1,19 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class Character
     {
-        [JsonProperty(PropertyName = "id")]
+        [JsonPropertyName("id")]
         public string Id { get; set; }
 
-        [JsonProperty(PropertyName = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [JsonProperty(PropertyName = "gender")]
+        [JsonPropertyName("gender")]
         public string Gender { get; set; }
 
-        [JsonProperty(PropertyName = "appeal")]
+        [JsonPropertyName("appeal")]
         public string Appeal { get; set; }
     }
 }

@@ -1,29 +1,29 @@
-﻿using System;
-using Newtonsoft.Json;
+using System;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
     public class AppInfo
     {
-        [JsonProperty(PropertyName = "projectId")]
+        [JsonPropertyName("projectId")]
         public Guid ProjectId { get; set; }
 
-        [JsonProperty(PropertyName = "applicationId")]
+        [JsonPropertyName("applicationId")]
         public Guid? ApplicationId { get; set; }
 
-        [JsonProperty(PropertyName = "appversionId")]
+        [JsonPropertyName("appversionId")]
         public Guid? AppversionId { get; set; }
 
-        [JsonProperty(PropertyName = "frontendType")]
+        [JsonPropertyName("frontendType")]
         public string FrontendType { get; set; }
 
-        [JsonProperty(PropertyName = "frontendEndpoint")]
+        [JsonPropertyName("frontendEndpoint")]
         public string FrontendEndpoint { get; set; }
 
-        [JsonProperty(PropertyName = "systemName")]
+        [JsonPropertyName("systemName")]
         public string SystemName { get; set; }
 
-        [JsonProperty(PropertyName = "frontendStateId")]
+        [JsonPropertyName("frontendStateId")]
         public string FrontendStateId { get; set; }
     }
 }

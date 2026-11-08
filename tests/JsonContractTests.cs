@@ -1,5 +1,5 @@
+using System.Text.Json;
 using System.Text.Json.Nodes;
-using Newtonsoft.Json;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models.Tests;
@@ -210,9 +210,9 @@ public class JsonContractTests
         Assert.Equal(3, Assert.Single(card.Items).TopText.MaxLines);
     }
 
-    private static T Deserialize<T>(string json) => JsonConvert.DeserializeObject<T>(json)!;
+    private static T Deserialize<T>(string json) => JsonSerializer.Deserialize<T>(json)!;
 
-    private static string Serialize<T>(T value) => JsonConvert.SerializeObject(value);
+    private static string Serialize<T>(T value) => JsonSerializer.Serialize(value);
 
     private static void AssertJsonEqual(string expected, string actual) =>
         Assert.True(JsonNode.DeepEquals(JsonNode.Parse(expected), JsonNode.Parse(actual)), actual);

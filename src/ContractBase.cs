@@ -1,23 +1,26 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
 {
+    [JsonDerivedType(typeof(Request))]
+    [JsonDerivedType(typeof(Response))]
     public abstract class ContractBase
     {
         /// <summary>
         /// Recommend to get values from <see cref="MessageNameValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "messageName")]
+        [JsonPropertyName("messageName")]
         public string MessageName { get; set; }
 
-        [JsonProperty(PropertyName = "sessionId")]
+        [JsonPropertyName("sessionId")]
         public string SessionId { get; set; }
 
-        [JsonProperty(PropertyName = "messageId")]
+        [JsonPropertyName("messageId")]
+        [JsonNumberHandling(JsonNumberHandling.AllowReadingFromString)]
         public long MessageId { get; set; }
 
-        [JsonProperty(PropertyName = "uuid")]
+        [JsonPropertyName("uuid")]
         public Uuid Uuid { get; set; }
     }
 }

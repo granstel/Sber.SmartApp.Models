@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace Sber.SmartApp.Models
 {
@@ -10,10 +10,10 @@ namespace Sber.SmartApp.Models
             Bubble = new Bubble();
         }
 
-        [JsonProperty(PropertyName = "bubble")]
+        [JsonPropertyName("bubble")]
         public Bubble Bubble { get; set; }
 
-        [JsonProperty(PropertyName = "card")]
+        [JsonPropertyName("card")]
         public Card Card { get; set; }
     }
 }

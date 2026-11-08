@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 using Sber.SmartApp.Models.Constants;
 
 namespace Sber.SmartApp.Models
@@ -8,19 +8,19 @@ namespace Sber.SmartApp.Models
         /// <summary>
         /// Recommend to get values from <see cref="CellTypeValues"/>
         /// </summary>
-        [JsonProperty(PropertyName = "type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [JsonProperty(PropertyName = "top_text")]
+        [JsonPropertyName("top_text")]
         public CardCellText TopText { get; set; }
 
-        [JsonProperty(PropertyName = "bottom_text")]
+        [JsonPropertyName("bottom_text")]
         public CardCellText BottomText { get; set; }
 
-        [JsonProperty(PropertyName = "paddings")]
+        [JsonPropertyName("paddings")]
         public Paddings Paddings { get; set; }
 
-        [JsonProperty(PropertyName = "actions")]
+        [JsonPropertyName("actions")]
         public Action[] Actions { get; set; }
     }
 }
