@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Authors>GranSteL</Authors>
     <Description>Models for Sber SmartApp API</Description>
     <Version>2.0.0</Version>
