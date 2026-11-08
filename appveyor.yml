@@ -1,9 +1,0 @@
-version: 2.0.0.{build}
-branches:
-  only:
-  - main
-image: Visual Studio 2026
-build_script:
-- cmd: dotnet build src\Sber.SmartApp.Models.sln -c Release
-test_script:
-- cmd: dotnet test "src\Sber.SmartApp.Models.sln" -c Release
