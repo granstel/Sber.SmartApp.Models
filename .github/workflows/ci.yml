@@ -43,9 +43,9 @@ jobs:
         run: |
           dotnet --version
           dotnet --list-runtimes
-          dotnet restore Sber.SmartApp.Models.slnx -p:NuGetAuditMode=all
-          dotnet build Sber.SmartApp.Models.slnx -c Release --no-restore -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true
-          dotnet test --solution Sber.SmartApp.Models.slnx -c Release --no-build -p:Version="$VERSION"
+          dotnet restore -p:NuGetAuditMode=all
+          dotnet build -c Release --no-restore -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true
+          dotnet test -c Release --no-build -p:Version="$VERSION"
       - name: Pack library and test from the local feed
         env:
           VERSION: ${{ steps.version.outputs.value }}

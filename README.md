@@ -24,9 +24,9 @@ coercion rules.
 Install the .NET SDK specified in `global.json`.
 
 ```sh
-dotnet restore Sber.SmartApp.Models.slnx
-dotnet build Sber.SmartApp.Models.slnx -c Release --no-restore
-dotnet test --solution Sber.SmartApp.Models.slnx -c Release --no-build
+dotnet restore
+dotnet build -c Release --no-restore
+dotnet test -c Release --no-build
 dotnet pack src/Sber.SmartApp.Models.csproj -c Release --no-build
 ```
 
