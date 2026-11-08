@@ -33,10 +33,6 @@ jobs:
         run: |
           if [[ "$GITHUB_EVENT_NAME" == release ]]; then
             version="$GITHUB_REF_NAME"
-            if [[ ! "$version" =~ ^(0|[1-9][0-9]*)[.](0|[1-9][0-9]*)[.](0|[1-9][0-9]*)$ ]]; then
-              echo '::error::Release tag must be MAJOR.MINOR.PATCH (for example, 2.1.0).'
-              exit 1
-            fi
           else
             version="0.0.0-ci.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
           fi
