@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/Sber.SmartApp.Models.csproj" />
+  <Project Path="tests/Sber.SmartApp.Models.Tests.csproj" />
+</Solution>
