@@ -4,24 +4,83 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_call:
+    outputs:
+      artifact-id:
+        value: ${{ jobs.contracts.outputs.artifact-id }}
 
 permissions:
   contents: read
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   contracts:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-id: ${{ steps.upload.outputs.artifact-id }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
       - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
-          dotnet-version: 10.0.x
-      - name: Pack and test the package on .NET 10
+          global-json-file: global.json
+      - name: Select package version
+        id: version
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == release ]]; then
+            version="${GITHUB_REF_NAME#v}"
+            number='(0|[1-9][0-9]*)'
+            identifier="($number|[0-9]*[A-Za-z-][0-9A-Za-z-]*)"
+            semver="^${number}\.${number}\.${number}(-${identifier}(\.${identifier})*)?$"
+            if [[ ! "$version" =~ $semver ]]; then
+              echo "::error::Use a SemVer release tag without build metadata (optional v prefix)."
+              exit 1
+            fi
+          else
+            version="0.0.0-ci.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
+          fi
+          echo "value=$version" >> "$GITHUB_OUTPUT"
+      - name: Restore, build and test solution
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
+        run: |
+          dotnet --version
+          dotnet --list-runtimes
+          dotnet restore Sber.SmartApp.Models.slnx -p:NuGetAuditMode=all
+          dotnet build Sber.SmartApp.Models.slnx -c Release --no-restore -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true
+          dotnet test --solution Sber.SmartApp.Models.slnx -c Release --no-build -p:Version="$VERSION"
+      - name: Pack library and test from the local feed
+        env:
+          VERSION: ${{ steps.version.outputs.value }}
         run: |
           project=src/Sber.SmartApp.Models.csproj
           tests=tests/Sber.SmartApp.Models.Tests.csproj
           feed="$RUNNER_TEMP/packages"
-          version="0.0.0-ci.${GITHUB_RUN_ID}.${GITHUB_RUN_ATTEMPT}"
-          dotnet pack "$project" -c Release -p:GeneratePackageOnBuild=false -p:PackageVersion="$version" -o "$feed"
-          dotnet restore "$tests" -p:ModelsPackageVersion="$version" --source "$feed" --source https://api.nuget.org/v3/index.json
-          dotnet test "$tests" -c Release --no-restore -p:ModelsPackageVersion="$version"
+          config="$RUNNER_TEMP/package-test.config"
+          dotnet pack "$project" -c Release --no-build -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true -o "$feed"
+          cat > "$config" <<'EOF'
+          <configuration>
+            <packageSources>
+              <add key="local" value="packages" />
+              <add key="nuget.org" value="https://api.nuget.org/v3/index.json" />
+            </packageSources>
+            <packageSourceMapping>
+              <packageSource key="local"><package pattern="Sber.SmartApp.Models" /></packageSource>
+              <packageSource key="nuget.org"><package pattern="*" /></packageSource>
+            </packageSourceMapping>
+          </configuration>
+          EOF
+          dotnet restore "$tests" --configfile "$config" --packages "$RUNNER_TEMP/nuget-cache" -p:ModelsPackageVersion="$VERSION" -p:NuGetAuditMode=all
+          dotnet test --project "$tests" -c Release --no-restore -p:ModelsPackageVersion="$VERSION"
+      - name: Save the release package
+        if: github.event_name == 'release'
+        id: upload
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-package-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/packages/*.nupkg
+          if-no-files-found: error
