@@ -18,3 +18,32 @@ The models preserve the SmartApp field names and their casing. Set
 `JsonSerializerOptions.PropertyNameCaseInsensitive` if your input can use
 different casing. System.Text.Json applies its own JSON parsing and type
 coercion rules.
+
+## Build and test
+
+Install the .NET SDK specified in `global.json`.
+
+```sh
+dotnet restore Sber.SmartApp.Models.slnx
+dotnet build Sber.SmartApp.Models.slnx -c Release --no-restore
+dotnet test --solution Sber.SmartApp.Models.slnx -c Release --no-build
+dotnet pack src/Sber.SmartApp.Models.csproj -c Release --no-build
+```
+
+## Release
+
+Publish a GitHub Release from a commit that includes `release.yml` with a
+new SemVer tag such as `2.1.0` or `v2.1.0-rc.1`. Omit build metadata because
+NuGet excludes it from package identity. The workflow attaches the tested
+package to the release and pushes it to both registries. Repository-wide
+immutable releases must stay disabled for this upload after publication.
+
+For NuGet.org, configure Trusted Publishing for owner `granstel`,
+repository `Sber.SmartApp.Models`, workflow file `release.yml`, and
+environment `nuget`. Set the environment secret `NUGET_USER` to the
+NuGet.org profile name. If the package already exists on GitHub Packages,
+grant this repository write access under the package's Actions settings.
+
+Use **Re-run failed jobs** to resume a partial release with the same
+package. Existing registry versions are skipped and an existing release
+asset is accepted only if its digest matches.
